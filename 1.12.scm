@@ -1,0 +1,10 @@
+(define (pascal step row)
+  (cond ((or (< row 0) (> row step)) 0)
+        ((and (= step 1) (= row 1)) 1)
+        (else
+          (+ (pascal (- step 1) (- row 1))
+             (pascal (- step 1) row)
+          )
+        )
+  )
+)    
